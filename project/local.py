@@ -3,7 +3,7 @@ from .settings import *  # noqa: F401
 
 SECRET_KEY = 'lksdf98wrhkjs88dsf8-324ksdm'
 
-DEBUG = False
+DEBUG = True
 
 DATABASES = {
     'default': {
@@ -11,7 +11,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # TODO-specific settings

@@ -4,7 +4,7 @@ import os
 from django.contrib.messages import constants as message_constants
 
 DEBUG = False
-ALLOWED_HOSTS =  ['localhost', '127.0.0.1']
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Local time zone for this installation. Choices can be found here:

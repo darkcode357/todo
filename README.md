@@ -28,4 +28,3 @@ Then:
 `./manage.py migrate`
 
 See additional instructions in the django-todo README.
-
