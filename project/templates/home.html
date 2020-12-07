@@ -1,45 +1,58 @@
-{% extends "base.html" %} {% block title %}django-todo{% endblock %}
+
+{% extends "base.html" %} {% block title %}Lista de tarefas{% endblock %}
 
 {% block content %}
 
-  <h1>django-todo</h1>
+  <h1>Lembretes do Darkcode0x00</h1>
 
-  <p>
-    django-todo is a
-    <i>pluggable</i>, multi-user, multi-group, multi-list todo and ticketing system - a reusable app designed to be dropped into any existing Django project. Users can create tasks for themselves or for others, or create Unassigned tasks that will be filed into a specific list (public tickets).
-  </p>
-
-  <p>
-      The fake content on this demo site is refreshed every few hours. Notice that you can only see or write to tasks in the Django group(s) you belong to.
-  </p>
 
   <div class="card mt-4">
+    <div class="card-header">
+        <h5>
+          Notas/Lembretes
+        </h5>
+    </div>
+    <div class="card-body">
+      <p>
+        Nessa tabela contem todos os seus afazers e faculdade
+      </p>
+      <ul>
+        <li>
+          <a href="http://127.0.0.1:8000/todo/28/estudo-em-dia/">Faculdade Engenharia De Software</a> 
+        </li>
+      <li>
+        <a href="https://github.com/darkcode357/thg-framework/">thg-framework</a> is a hacking framework
+      </li>
+      </ul>
+      <p>
+        {% if user.is_authenticated %}
+        {% else %}
+          <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
+        {% endif %}
+      </p>
+    </div>
+  </div>
+
+    <div class="card mt-4">
       <div class="card-header">
           <h5>
-            Demo user logins
+            Projetos Para gerenciar
           </h5>
       </div>
       <div class="card-body">
         <p>
-          You can log into this demo site as one of several users, who have different permissions and group memberships.
+          Nessa tabela contem todos os projetos que você participa
         </p>
         <ul>
           <li>
-            To access todo lists for group Basket Weavers, log in as <code>user1</code> or <code>user2</code>
+            <a href="https://github.com/darkcode357/thgcmd">thgcmd</a> is a command line lib
           </li>
         <li>
-          To access todo lists for group Scuba Divers, log in as <code>user3</code> or <code>user4</code>
+          <a href="https://github.com/darkcode357/thg-framework/">thg-framework</a> is a hacking framework
         </li>
-          <li>
-            To access all lists, and to be able to create new lists, login as user <code>staffer</code>
-          </li>
-          <li>
-              <b>The password for all demo users is <code>todo</code></b>
-          </li>
         </ul>
         <p>
           {% if user.is_authenticated %}
-            You are already logged in.
           {% else %}
             <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
           {% endif %}
@@ -48,21 +61,7 @@
     </div>
 
 
-  <p class="mt-3">
-    The demo site consists of two repos: <a href="https://github.com/shacker/gtd">GTD</a>, which is a basic Django site (the outer "shell"), which is a really a stand-in for <i>your</i> site, and the django-todo reusable app itself (<a href="https://github.com/shacker/django-todo">github</a>), which provides the main functionality.
-  </p>
 
-  <p>
-    django-todo ships with a set of Bootstrap templates, which extend your site's <code>base.html</code>. The templates can easily be overridden with your own layout and styling preferences (even ditching Boostrap altogether if you like).
-  </p>
-
-  <ul>
-    <li>
-      <a href="http://django-todo.readthedocs.io/">Full documentation</a> is at readthedocs
-    </li>
-    <li>
-        Code is <a href="https://github.com/shacker/django-todo">in the repo</a> (contributions welcome)
-      </li>
-  </ul>
+ 
 
 {% endblock %}
