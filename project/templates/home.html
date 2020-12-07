@@ -1,0 +1,66 @@
+{% extends "base.html" %} {% block title %}Lista de tarefas{% endblock %}
+
+{% block content %}
+
+  <h1>Lembretes do Darkcode0x00</h1>
+
+
+  <div class="card mt-4">
+    <div class="card-header">
+        <h5>
+          Notas/Lembretes
+        </h5>
+    </div>
+    <div class="card-body">
+      <p>
+        Nessa tabela contem todos os seus afazers e faculdade
+      </p>
+      <ul>
+        <li>
+          <a href="http://127.0.0.1:8000/todo/28/estudo-em-dia/">Faculdade Engenharia De Software</a> 
+        </li>
+      <li>
+        <a href="https://github.com/darkcode357/thg-framework/">thg-framework</a> is a hacking framework
+      </li>
+      </ul>
+      <p>
+        {% if user.is_authenticated %}
+        {% else %}
+          <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
+        {% endif %}
+      </p>
+    </div>
+  </div>
+
+    <div class="card mt-4">
+      <div class="card-header">
+          <h5>
+            Projetos Para gerenciar
+          </h5>
+      </div>
+      <div class="card-body">
+        <p>
+          Nessa tabela contem todos os projetos que você participa
+        </p>
+        <ul>
+          <li>
+            <a href="https://github.com/darkcode357/thgcmd">thgcmd</a> is a command line lib
+          </li>
+        <li>
+          <a href="https://github.com/darkcode357/thg-framework/">thg-framework</a> is a hacking framework
+        </li>
+        </ul>
+        <p>
+          {% if user.is_authenticated %}
+          {% else %}
+            <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
+          {% endif %}
+        </p>
+      </div>
+    </div>
+
+
+
+ 
+
+{% endblock %}
